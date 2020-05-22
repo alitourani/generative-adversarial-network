@@ -21,7 +21,7 @@ If you want to run the code locally, you need to install below **Python 3.3+** p
     # Solution 1:
     from keras import backend as K
     K.tensorflow_backend._get_available_gpus()
-    
+
     # Solution 2:
     from tensorflow.python.client import device_lib
     print(device_lib.list_local_devices())
@@ -43,6 +43,25 @@ Assuming that you are using Google Colab, you can simply use the below command t
 	shutil.unpack_archive("/content/drive/My Drive/sample/cars_train.tgz", "/content/drive/My Drive/Sample/Directory/")
 
 The file **colab-data-prepration.py** contains all the mentioned codes and steps to download and unzip required files to your Google Drive using Google Colab notebook.
+
+### 2) Overall GAN Architecture Design
+Generative Adversarial Networks (GANs) are great approaches to generate and assess new data for further processes. Hereby, the **Generator** learns how to create images that look real from a given set of images, while the **Discrominator** learns to separate real images from fake ones. The overall process is simultaneously handled by the aid of an **Adversial** process. In our application, the role of the Generator is to create several vehicle images that look real, and the Discriminator tries to examine them to determine whether they look real or not. Learn more about these newtorks at [Tensorflow](https://www.tensorflow.org/tutorials/generative/dcgan "Tensorflow") and [Towards Data Science](https://towardsdatascience.com/generative-adversarial-network-gan-for-dummies-a-step-by-step-tutorial-fdefff170391 "Towards Data Science") websites. The file **architecture-design.py** contains the implementation of the designed GAN. You should run the code to see the produced model. Below is a summary of the network:
+
+    # Summary of the generator architecture:
+    Total params: 6,264,579
+    Trainable params: 6,264,579
+    Non-trainable params: 0
+
+    # Summary of the discriminator architecture:
+    Total params: 790,913
+    Trainable params: 790,913
+    Non-trainable params: 0
+
+    # Summary of the Adverserial Network:
+    Total params: 7,055,492
+    Trainable params: 6,264,579
+    Non-trainable params: 790,913
+
 
 ## References
  [1] J. Krause, M. Stark, J. Deng, and L. Fei-Fei, **3D Object Representations for Fine-Grained Categorization**, *4th IEEE Workshop on 3D Representation and Recognition*, at ICCV 2013 (3dRR-13). Sydney, Australia, 2013.
