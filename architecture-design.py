@@ -10,7 +10,7 @@ height = 32
 width = 32
 channels = 3
 
-inputImages = "/content/drive/My Drive/Deep Learning/GAN Retrieval/Dataset/cars_train"
+inputImages = "/content/drive/My Drive/cars_train/"
 images = glob.glob(inputImages + "*.jpg")
 
 # Generating Overall Architecture of GAN - Generator
