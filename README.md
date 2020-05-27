@@ -63,5 +63,14 @@ Generative Adversarial Networks (GANs) are great approaches to generate and asse
     Non-trainable params: 790,913
 
 
+### 3) Training Process
+
+The file **dcgan-train.py** contains the implementation of the generated model to perform training process on the input data. Note that in order to get good results, you need to choose the parameters correctly. Here are some of the important configures:
+1. **Epoch**: the number of times the training method sees the entire dataset.
+2. **Batch size**: the number of items passes through the neural network. The higher the batch size, the more memory space you will need.
+3. **Iteration**: the number of times a batch of data passed through the training method (the forward pass and backward pass).
+
+
 ## References
- [1] J. Krause, M. Stark, J. Deng, and L. Fei-Fei, **3D Object Representations for Fine-Grained Categorization**, *4th IEEE Workshop on 3D Representation and Recognition*, at ICCV 2013 (3dRR-13). Sydney, Australia, 2013.
+ [1] J. Krause, M. Stark, J. Deng, and L. Fei-Fei, **3D Object Representations for Fine-Grained Categorization**, *4th IEEE Workshop on 3D Representation and Recognition*, at ICCV 2013, Sydney, Australia, 2013.
+ [2] **StackOverflow** - Epoch vs Iteration when training neural networks ([link](https://stackoverflow.com/questions/4752626/epoch-vs-iteration-when-training-neural-networks "link"))

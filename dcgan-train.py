@@ -5,23 +5,30 @@ outputImages="/content/drive/My Drive/Output/"
 trainList=[]
 i=0
 start = 0
-iterations = 1000
-batchSize = 20
+iterations = 10
+batchSize = 100
+counter=0
 
 for m in images:
-    tempImage = load_img(m)
-    tempImage = img_to_array(tempImage)
-    tempImage = cv2.resize(tempImage, (height, width))
-    tempImage = tempImage / np.max(tempImage)
-    tempImage = tempImage.reshape(height, width, 3)
-    tempImage = np.expand_dims(np.array(tempImage, dtype=float), axis=0)
-    if i == 0:
-      trainList = tempImage
-      i = i + 1
-    else:
-      trainList = np.append(trainList, tempImage, axis=0)
+  counter += 1
+  print("Analyzing image #", counter)
+  tempImage = load_img(m)
+  tempImage = img_to_array(tempImage)
+  tempImage = cv2.resize(tempImage, (height, width))
+  tempImage = tempImage / np.max(tempImage)
+  tempImage = tempImage.reshape(height, width, 3)
+  tempImage = np.expand_dims(np.array(tempImage, dtype=float), axis=0)
+  if i == 0:
+    trainList = tempImage
+    i = i + 1
+  else:
+    trainList = np.append(trainList, tempImage, axis=0)
 
-# for step in range(iterations):
+counter=0
+
+for step in range(iterations):
+  counter += 1
+  print("Iteration #", counter)
   latentVectors = np.random.normal(size=(batchSize, dimensions))
   generatedList = generator.predict(latentVectors)
   stop = start + batchSize
