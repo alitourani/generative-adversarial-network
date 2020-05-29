@@ -1,17 +1,24 @@
 import os
 from keras.preprocessing import image
+import random
 
 outputImages="/content/drive/My Drive/Output/"
 trainList=[]
 i=0
 start = 0
-iterations = 10
-batchSize = 100
-counter=0
+iterations = 10000
+batchSize = 200
+counter = 0
+numberOfTrainingImages = 1500
 
-for m in images:
+# Reducing the number of training samples
+trainingImages = random.sample(images, numberOfTrainingImages)
+print("Randomly selecting ", len(trainingImages), " images from ", len(images), " samples of dataset ...")
+
+for m in trainingImages:
   counter += 1
-  print("Analyzing image #", counter)
+  if counter % 100 == 0:
+    print("Analyzing image #", counter)
   tempImage = load_img(m)
   tempImage = img_to_array(tempImage)
   tempImage = cv2.resize(tempImage, (height, width))
