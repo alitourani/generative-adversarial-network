@@ -35,7 +35,8 @@ counter=0
 
 for step in range(iterations):
   counter += 1
-  print("Iteration #", counter)
+  if counter % 100 == 0:
+    print("Iteration #", counter)
   latentVectors = np.random.normal(size=(batchSize, dimensions))
   generatedList = generator.predict(latentVectors)
   stop = start + batchSize
