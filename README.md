@@ -74,3 +74,4 @@ The file **dcgan-train.py** contains the implementation of the generated model t
 ## References
  [1] J. Krause, M. Stark, J. Deng, and L. Fei-Fei, **3D Object Representations for Fine-Grained Categorization**, *4th IEEE Workshop on 3D Representation and Recognition*, at ICCV 2013, Sydney, Australia, 2013.
  [2] **StackOverflow** - Epoch vs Iteration when training neural networks ([link](https://stackoverflow.com/questions/4752626/epoch-vs-iteration-when-training-neural-networks "link"))
+ [3] Chollet, Francois. 2018. Deep Learning with Python. First. Shelter Island, NY, US: Manning.
