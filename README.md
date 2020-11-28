@@ -1,4 +1,4 @@
-# Generative Adversarial Network (GAN) for Creating New Samples
+# Generative Adversarial Network (GAN)
 
 As a summary, a GAN is a type of Artificial Neural Network that is able to generate new data from a set of given inputs. Hereby, we want to feed several random images to a GAN, so that it provide us with realistic images of vehicles.
 
